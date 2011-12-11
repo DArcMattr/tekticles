@@ -15,7 +15,7 @@ f:SetScript("OnEvent", function()
 	local BOLD       = "Interface\\AddOns\\tekticles\\CalibriBold.ttf"
 	local BOLDITALIC = "Interface\\AddOns\\tekticles\\CalibriBoldItalic.ttf"
 	local ITALIC     = "Interface\\AddOns\\tekticles\\CalibriItalic.ttf"
-  local NUMBER     = [[Interface\AddOns\SharedMediaAdditionalFonts\fonts\Accidental Presidency.ttf]]
+  local NUMBER     = [[Interface\AddOns\SharedMediaAdditionalFonts\font\Accidental Presidency.ttf]]
 
 	UIDROPDOWNMENU_DEFAULT_TEXT_HEIGHT = 12
 	CHAT_FONT_HEIGHTS = {7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24}
@@ -95,12 +95,10 @@ f:SetScript("OnEvent", function()
 	for _,butt in pairs(PaperDollTitlesPane.buttons) do butt.text:SetFontObject(GameFontHighlightSmallLeft) end
 end)
 
---[[
 local LSM = LibStub and LibStub:GetLibrary("LibSharedMedia-3.0", true)
 if LSM then
-	LSM:Register(LSM.MediaType.FONT, "Calibri", "Interface\\AddOns\\tekticles\\Calibri.ttf")
-	LSM:Register(LSM.MediaType.FONT, "Calibri Bold", "Interface\\AddOns\\tekticles\\CalibriBold.ttf")
-	LSM:Register(LSM.MediaType.FONT, "Calibri Bold Italic", "Interface\\AddOns\\tekticles\\CalibriBoldItalic.ttf")
-	LSM:Register(LSM.MediaType.FONT, "Calibri Italic", "Interface\\AddOns\\tekticles\\CalibriItalic.ttf")
+  LSM:Register("font", "Calibri", [[Interface\Addons\SharedMedia_MyMedia\font\Calibri.ttf]]) 
+  LSM:Register("font", "Calibri Bold", [[Interface\Addons\SharedMedia_MyMedia\font\CalibriBold.ttf]]) 
+  LSM:Register("font", "Calibri Bold Italic", [[Interface\Addons\SharedMedia_MyMedia\font\CalibriBoldItalic.ttf]]) 
+  LSM:Register("font", "Calibri Italic", [[Interface\Addons\SharedMedia_MyMedia\font\CalibriItalic.ttf]]) 
 end
---]]

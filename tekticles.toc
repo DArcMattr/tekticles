@@ -1,4 +1,4 @@
-## Interface: 30300
+## Interface: 40300
 
 ## Title: tekticles
 ## Notes: Simple font replacement
@@ -8,9 +8,6 @@
 ## X-Email: tekkub-wow@googlegroups.com
 ## X-Credits: ClearFont2 by Kirkburn
 ## X-Category: Interface Enhancements
-
-## LoadManagers: AddonLoader
-## X-LoadOn-Always: delayed
 
 ## OptionalDeps: LibSharedMedia-3.0
 

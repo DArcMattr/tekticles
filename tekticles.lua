@@ -1,20 +1,27 @@
 ﻿
 local function SetFont(obj, font, size, style, r, g, b, sr, sg, sb, sox, soy)
   obj:SetFont(font, size, style)
-  if sr and sg and sb then obj:SetShadowColor(sr, sg, sb) end
-  if sox and soy then obj:SetShadowOffset(sox, soy) end
-  if r and g and b then obj:SetTextColor(r, g, b)
-  elseif r then obj:SetAlpha(r) end
+  if sr and sg and sb then 
+    obj:SetShadowColor(sr, sg, sb) 
+  end
+  if sox and soy then 
+    obj:SetShadowOffset(sox, soy) 
+  end
+  if r and g and b then 
+    obj:SetTextColor(r, g, b)
+  elseif r then 
+    obj:SetAlpha(r) 
+  end
 end
 
 
 local f = CreateFrame("Frame")
 f:RegisterEvent("ADDON_LOADED")
 f:SetScript("OnEvent", function()
-  local NORMAL     = [[Interface\Addons\SharedMedia_MyMedia\font\Roboto-Regular.ttf]]
-  local BOLD       = [[Interface\Addons\SharedMedia_MyMedia\font\Roboto-Bold.ttf]]
-  local BOLDITALIC = [[Interface\Addons\SharedMedia_MyMedia\font\Roboto-BoldItalic.ttf]]
-  local ITALIC     = [[Interface\Addons\SharedMedia_MyMedia\font\Roboto-Italic.ttf]]
+  local NORMAL     = [[Interface\Addons\SharedMedia_MyMedia\font\Roboto-Condensed.ttf]]
+  local BOLD       = [[Interface\Addons\SharedMedia_MyMedia\font\Roboto-BoldCondensed.ttf]]
+  local BOLDITALIC = [[Interface\Addons\SharedMedia_MyMedia\font\Roboto-BoldCondensedItalic.ttf]]
+  local ITALIC     = [[Interface\Addons\SharedMedia_MyMedia\font\Roboto-CondensedItalic.ttf]]
   local NUMBER     = [[Interface\AddOns\SharedMedia_MyMedia\font\Roboto-Condensed.ttf]]
 
   UIDROPDOWNMENU_DEFAULT_TEXT_HEIGHT = 12
@@ -60,7 +67,6 @@ f:SetScript("OnEvent", function()
   SetFont(SystemFont_Shadow_Large,            NORMAL, 17)
   SetFont(SystemFont_Shadow_Med1,             NORMAL, 13)
   SetFont(SystemFont_Shadow_Med2,             NORMAL, 14)
-
   SetFont(SystemFont_Shadow_Med3,             NORMAL, 15)
   SetFont(SystemFont_Shadow_Outline_Huge2,    NORMAL, 22, "OUTLINE")
   SetFont(SystemFont_Shadow_Small,              BOLD, 11)

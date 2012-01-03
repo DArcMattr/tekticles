@@ -11,11 +11,11 @@ end
 local f = CreateFrame("Frame")
 f:RegisterEvent("ADDON_LOADED")
 f:SetScript("OnEvent", function()
-  local NORMAL     = [[Interface\AddOns\tekticles\Calibri.ttf]]
-  local BOLD       = [[Interface\AddOns\tekticles\CalibriBold.ttf]]
-  local BOLDITALIC = [[Interface\AddOns\tekticles\CalibriBoldItalic.ttf]]
-  local ITALIC     = [[Interface\AddOns\tekticles\CalibriItalic.ttf]]
-  local NUMBER     = [[Interface\AddOns\SharedMediaAdditionalFonts\fonts\Accidental Presidency.ttf]]
+  local NORMAL     = [[Interface\Addons\SharedMedia_MyMedia\font\Roboto-Regular.ttf]]
+  local BOLD       = [[Interface\Addons\SharedMedia_MyMedia\font\Roboto-Bold.ttf]]
+  local BOLDITALIC = [[Interface\Addons\SharedMedia_MyMedia\font\Roboto-BoldItalic.ttf]]
+  local ITALIC     = [[Interface\Addons\SharedMedia_MyMedia\font\Roboto-Italic.ttf]]
+  local NUMBER     = [[Interface\AddOns\SharedMedia_MyMedia\font\Roboto-Condensed.ttf]]
 
   UIDROPDOWNMENU_DEFAULT_TEXT_HEIGHT = 12
   CHAT_FONT_HEIGHTS = {7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24}
@@ -90,8 +90,8 @@ end)
 
 local LSM = LibStub and LibStub:GetLibrary("LibSharedMedia-3.0", true)
 if LSM then
-  LSM:Register("font", "Calibri", [[Interface\Addons\SharedMedia_MyMedia\font\Calibri.ttf]]) 
-  LSM:Register("font", "Calibri Bold", [[Interface\Addons\SharedMedia_MyMedia\font\CalibriBold.ttf]]) 
-  LSM:Register("font", "Calibri Bold Italic", [[Interface\Addons\SharedMedia_MyMedia\font\CalibriBoldItalic.ttf]]) 
-  LSM:Register("font", "Calibri Italic", [[Interface\Addons\SharedMedia_MyMedia\font\CalibriItalic.ttf]]) 
+  LSM:Register("font", "Calibri", [[Interface\Addons\SharedMedia_MyMedia\font\Calibri.ttf]])
+  LSM:Register("font", "Calibri Bold", [[Interface\Addons\SharedMedia_MyMedia\font\CalibriBold.ttf]])
+  LSM:Register("font", "Calibri Bold Italic", [[Interface\Addons\SharedMedia_MyMedia\font\CalibriBoldItalic.ttf]])
+  LSM:Register("font", "Calibri Italic", [[Interface\Addons\SharedMedia_MyMedia\font\CalibriItalic.ttf]])
 end

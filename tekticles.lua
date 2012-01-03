@@ -43,7 +43,7 @@ f:SetScript("OnEvent", function()
 	SetFont(NumberFont_Shadow_Small,            NORMAL, 12)
 	SetFont(QuestFont_Large,                    NORMAL, 16)
 	SetFont(QuestFont_Shadow_Huge,                BOLD, 19, nil, nil, nil, nil, 0.54, 0.4, 0.1)
-  SetFont(QuestFont_Shadow_Small,               BOLD, 10, nil, nil, nil, nil, 0.54, 0.4, 0.1)
+	SetFont(QuestFont_Shadow_Small,               BOLD, 10, nil, nil, nil, nil, 0.54, 0.4, 0.1)
 	SetFont(ReputationDetailFont,                 BOLD, 12, nil, nil, nil, nil, 0, 0, 0, 1, -1)
 	SetFont(SpellFont_Small,                      BOLD, 11)
 	SetFont(SystemFont_InverseShadow_Small,       BOLD, 11)
@@ -59,7 +59,8 @@ f:SetScript("OnEvent", function()
 	SetFont(SystemFont_Shadow_Huge3,              BOLD, 25)
 	SetFont(SystemFont_Shadow_Large,            NORMAL, 17)
 	SetFont(SystemFont_Shadow_Med1,             NORMAL, 13)
-  SetFont(SystemFont_Shadow_Med2,             NORMAL, 14)
+	SetFont(SystemFont_Shadow_Med2,             NORMAL, 14)
+
 	SetFont(SystemFont_Shadow_Med3,             NORMAL, 15)
 	SetFont(SystemFont_Shadow_Outline_Huge2,    NORMAL, 22, "OUTLINE")
 	SetFont(SystemFont_Shadow_Small,              BOLD, 11)
@@ -84,15 +85,7 @@ f:SetScript("OnEvent", function()
 		f:SetFont(NORMAL, size, "OUTLINE")
 	end
 
-	-- I have no idea why the channel list is getting fucked up
-	-- but re-setting the font obj seems to fix it
-	for i=1,MAX_CHANNEL_BUTTONS do
-		local f = _G["ChannelButton"..i.."Text"]
-		f:SetFontObject(GameFontNormalSmallLeft)
-		-- function f:SetFont(...) error("Attempt to set font on ChannelButton"..i) end
-	end
-
-	for _,butt in pairs(PaperDollTitlesPane.buttons) do butt.text:SetFontObject(GameFontHighlightSmallLeft) end
+  for _,butt in pairs(PaperDollTitlesPane.buttons) do butt.text:SetFontObject(GameFontHighlightSmallLeft) end
 end)
 
 local LSM = LibStub and LibStub:GetLibrary("LibSharedMedia-3.0", true)

@@ -85,13 +85,7 @@ f:SetScript("OnEvent", function()
     f:SetFont(NORMAL, size, "OUTLINE")
   end
 
-  for _,butt in pairs(PaperDollTitlesPane.buttons) do butt.text:SetFontObject(GameFontHighlightSmallLeft) end
+  for _, butt in pairs(PaperDollTitlesPane.buttons) do 
+    butt.text:SetFontObject(GameFontHighlightSmallLeft) 
+  end
 end)
-
-local LSM = LibStub and LibStub:GetLibrary("LibSharedMedia-3.0", true)
-if LSM then
-  LSM:Register("font", "Calibri", [[Interface\Addons\SharedMedia_MyMedia\font\Calibri.ttf]])
-  LSM:Register("font", "Calibri Bold", [[Interface\Addons\SharedMedia_MyMedia\font\CalibriBold.ttf]])
-  LSM:Register("font", "Calibri Bold Italic", [[Interface\Addons\SharedMedia_MyMedia\font\CalibriBoldItalic.ttf]])
-  LSM:Register("font", "Calibri Italic", [[Interface\Addons\SharedMedia_MyMedia\font\CalibriItalic.ttf]])
-end

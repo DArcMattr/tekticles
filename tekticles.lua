@@ -1,10 +1,17 @@
 ﻿
 local function SetFont(obj, font, size, style, r, g, b, sr, sg, sb, sox, soy)
   obj:SetFont(font, size, style)
-  if sr and sg and sb then obj:SetShadowColor(sr, sg, sb) end
-  if sox and soy then obj:SetShadowOffset(sox, soy) end
-  if r and g and b then obj:SetTextColor(r, g, b)
-  elseif r then obj:SetAlpha(r) end
+  if sr and sg and sb then
+    obj:SetShadowColor(sr, sg, sb)
+  end
+  if sox and soy then
+    obj:SetShadowOffset(sox, soy)
+  end
+  if r and g and b then
+    obj:SetTextColor(r, g, b)
+  elseif r then
+    obj:SetAlpha(r)
+  end
 end
 
 
@@ -60,7 +67,6 @@ f:SetScript("OnEvent", function()
   SetFont(SystemFont_Shadow_Large,            NORMAL, 17)
   SetFont(SystemFont_Shadow_Med1,             NORMAL, 13)
   SetFont(SystemFont_Shadow_Med2,             NORMAL, 14)
-
   SetFont(SystemFont_Shadow_Med3,             NORMAL, 15)
   SetFont(SystemFont_Shadow_Outline_Huge2,    NORMAL, 22, "OUTLINE")
   SetFont(SystemFont_Shadow_Small,              BOLD, 11)
@@ -85,7 +91,7 @@ f:SetScript("OnEvent", function()
     f:SetFont(NORMAL, size, "OUTLINE")
   end
 
-  for _,butt in pairs(PaperDollTitlesPane.buttons) do 
-    butt.text:SetFontObject(GameFontHighlightSmallLeft) 
+  for _, butt in pairs(PaperDollTitlesPane.buttons) do
+    butt.text:SetFontObject(GameFontHighlightSmallLeft)
   end
 end)

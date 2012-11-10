@@ -11,6 +11,18 @@ frame:SetScript("OnShow", function(self)
 	group:SetPoint("BOTTOMLEFT", 16, 16)
 	group:SetPoint("BOTTOMRIGHT", -16, 16)
 
+
+	local tex = group:CreateTexture(nil, "BACKGROUND")
+	tex:SetTexture("Interface\\FrameGeneral\\UI-Background-Rock")
+	tex:SetPoint("TOPLEFT", 4, -4)
+	tex:SetPoint("BOTTOMRIGHT", -4, 4)
+
+	local alpha = group:CreateTexture(nil, "BACKGROUND")
+	alpha:SetTexture(1, 1, 1, 0.5)
+	alpha:SetBlendMode('ADD')
+	alpha:SetAllPoints(tex)
+
+
 	local GAP = 5
 	local frame = CreateFrame("Frame", nil, group)
 	frame:SetPoint("TOPRIGHT", -GAP, -GAP)
@@ -26,7 +38,7 @@ frame:SetScript("OnShow", function(self)
 		"GameFontHighlightMedium",
 		"GameFontNormalLarge",
 		"GameFontNormalHuge",
-		"GameFontGigantic",
+		"GameFont_Gigantic",
 		"BossEmoteNormalHuge",
 		"NumberFontNormal",
 		"NumberFontNormalSmall",
@@ -38,6 +50,8 @@ frame:SetScript("OnShow", function(self)
 		"ZoneTextFont",
 		"SubZoneTextFont",
 		"PVPInfoTextFont",
+		"QuestFont_Super_Huge",
+		"QuestFont_Shadow_Small",
 		"ErrorFont",
 		"TextStatusBarText",
 		"CombatLogFont",
@@ -77,7 +91,7 @@ frame:SetScript("OnShow", function(self)
 		local fs = frame:CreateFontString(nil, "ARTWORK", font)
 		if i == 1 then
 			fs:SetPoint("TOPLEFT", frame, "TOPLEFT", 30, -15)
-		elseif i == 21 then
+		elseif i == 23 then
 			fs:SetPoint("TOPLEFT", frame, "TOP", 30, -15)
 		else
 			fs:SetPoint("TOPLEFT", last, "BOTTOMLEFT", 0, -4)
@@ -88,8 +102,8 @@ frame:SetScript("OnShow", function(self)
 			tex:SetPoint("TOPLEFT", fs, -2, 2)
 			tex:SetPoint("BOTTOM", fs, 0, -2)
 			tex:SetWidth(150)
-			tex:SetTexture("Interface\\ChatFrame\\ChatFrameBackground")
-			tex:SetVertexColor(.8,.8,.8)
+			tex:SetTexture(1, 1, 1, 0.4)
+			tex:SetBlendMode('ADD')
 		end
 		last = fs
 	end

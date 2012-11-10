@@ -39,6 +39,7 @@ f:SetScript("OnEvent", function()
   SetFont(FriendsFont_Small,                  NORMAL, 11, nil, nil, nil, nil, 0, 0, 0, 1, -1)
   SetFont(FriendsFont_UserText,               NUMBER, 12, nil, nil, nil, nil, 0, 0, 0, 1, -1)
   SetFont(GameTooltipHeader,                    BOLD, 15, "OUTLINE")
+  SetFont(GameFont_Gigantic,                    BOLD, 32, nil, nil, nil, nil, 0, 0, 0, 1, -1)
   SetFont(InvoiceFont_Med,                    ITALIC, 13, nil, 0.15, 0.09, 0.04)
   SetFont(InvoiceFont_Small,                  ITALIC, 11, nil, 0.15, 0.09, 0.04)
   SetFont(MailFont_Large,                     ITALIC, 15, nil, 0.15, 0.09, 0.04, 0.54, 0.4, 0.1, 1, -1)
@@ -48,9 +49,10 @@ f:SetScript("OnEvent", function()
   SetFont(NumberFont_Outline_Med,             NUMBER, 15, "OUTLINE")
   SetFont(NumberFont_Shadow_Med,              NORMAL, 14)
   SetFont(NumberFont_Shadow_Small,            NORMAL, 12)
+  SetFont(QuestFont_Shadow_Small,               BOLD, 10, nil, nil, nil, nil, 0.54, 0.4, 0.1)
   SetFont(QuestFont_Large,                    NORMAL, 16)
   SetFont(QuestFont_Shadow_Huge,                BOLD, 19, nil, nil, nil, nil, 0.54, 0.4, 0.1)
-  SetFont(QuestFont_Shadow_Small,               BOLD, 10, nil, nil, nil, nil, 0.54, 0.4, 0.1)
+  SetFont(QuestFont_Super_Huge,                 BOLD, 24)
   SetFont(ReputationDetailFont,                 BOLD, 12, nil, nil, nil, nil, 0, 0, 0, 1, -1)
   SetFont(SpellFont_Small,                      BOLD, 11)
   SetFont(SystemFont_InverseShadow_Small,       BOLD, 11)
@@ -72,9 +74,6 @@ f:SetScript("OnEvent", function()
   SetFont(SystemFont_Shadow_Small,              BOLD, 11)
   SetFont(SystemFont_Small,                   NORMAL, 12)
   SetFont(SystemFont_Tiny,                    NORMAL, 11)
-  SetFont(SystemFont_Outline,                 NORMAL, 13)
-  SetFont(SystemFont_Huge1,                   NORMAL, 20)
-  SetFont(GameFont_Gigantic,                  NORMAL, 32)
   SetFont(Tooltip_Med,                        NORMAL, 13)
   SetFont(Tooltip_Small,                        BOLD, 12)
 
@@ -89,6 +88,14 @@ f:SetScript("OnEvent", function()
     local f = _G["ChatFrame"..i]
     local font, size = f:GetFont()
     f:SetFont(NORMAL, size, "OUTLINE")
+  end
+
+  -- I have no idea why the channel list is getting fucked up
+  -- but re-setting the font obj seems to fix it
+  for i=1,MAX_CHANNEL_BUTTONS do
+    local f = _G["ChannelButton"..i.."Text"]
+    f:SetFontObject(GameFontNormalSmallLeft)
+    -- function f:SetFont(...) error("Attempt to set font on ChannelButton"..i) end
   end
 
   for _, butt in pairs(PaperDollTitlesPane.buttons) do

@@ -76,6 +76,10 @@ f:SetScript("OnEvent", function()
   SetFont(SystemFont_Tiny,                    NORMAL, 11)
   SetFont(Tooltip_Med,                        NORMAL, 13)
   SetFont(Tooltip_Small,                        BOLD, 12)
+  SetFont(ChatBubbleFont,                       BOLD, 16, "OUTLINE" )
+  SetFont(DestinyFontHuge,                      BOLD, 32, "THICKOUTLINE" )
+  SetFont(DestinyFontLarge,                     BOLD, 18, "OUTLINE" )
+  SetFont(CoreAbilityFont,                      BOLD, 32, "THICKOUTLINE" )
 
   -- Derived fonts
   SetFont(BossEmoteNormalHuge,     BOLDITALIC, 27, "THICKOUTLINE")

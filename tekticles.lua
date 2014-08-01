@@ -18,11 +18,11 @@ end
 local f = CreateFrame("Frame")
 f:RegisterEvent("ADDON_LOADED")
 f:SetScript("OnEvent", function()
-  local NORMAL     = [[Interface\Addons\SharedMedia_MyMedia\font\Roboto-Condensed.ttf]]
-  local BOLD       = [[Interface\Addons\SharedMedia_MyMedia\font\Roboto-BoldCondensed.ttf]]
-  local BOLDITALIC = [[Interface\Addons\SharedMedia_MyMedia\font\Roboto-BoldCondensedItalic.ttf]]
-  local ITALIC     = [[Interface\Addons\SharedMedia_MyMedia\font\Roboto-CondensedItalic.ttf]]
-  local NUMBER     = [[Interface\AddOns\SharedMedia_MyMedia\font\Roboto-Condensed.ttf]]
+  local NORMAL     = [[Interface\Addons\SharedMedia_MyMedia\font\RobotoCondensed-Regular.ttf]]
+  local BOLD       = [[Interface\Addons\SharedMedia_MyMedia\font\RobotoCondensed-Bold.ttf]]
+  local BOLDITALIC = [[Interface\Addons\SharedMedia_MyMedia\font\RobotoCondensed-BoldItalic.ttf]]
+  local ITALIC     = [[Interface\Addons\SharedMedia_MyMedia\font\RobotoCondensed-Italic.ttf]]
+  local NUMBER     = [[Interface\AddOns\SharedMedia_MyMedia\font\RobotoCondensed-Regular.ttf]]
 
   UIDROPDOWNMENU_DEFAULT_TEXT_HEIGHT = 12
   CHAT_FONT_HEIGHTS = {7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24}

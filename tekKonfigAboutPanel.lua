@@ -4,7 +4,7 @@ if not lib then return end
 
 
 function lib.new(parent, addonname)
-	local frame = CreateFrame("Frame", nil, InterfaceOptionsFramePanelContainer)
+	local frame = CreateFrame("Frame", nil, InterfaceOptionsFramePanelContainer, BackdropTemplateMixin and "BackdropTemplate")
 	frame.name, frame.parent, frame.addonname = parent and "About" or addonname, parent, addonname
 	frame:Hide()
 	frame:SetScript("OnShow", lib.OnShow)
@@ -13,7 +13,7 @@ function lib.new(parent, addonname)
 end
 
 
-local editbox = CreateFrame('EditBox', nil, UIParent)
+local editbox = CreateFrame('EditBox', nil, UIParent, BackdropTemplateMixin and "BackdropTemplate")
 editbox:Hide()
 editbox:SetAutoFocus(true)
 editbox:SetHeight(32)
@@ -99,7 +99,7 @@ function lib.OnShow(frame)
 			detail:SetText((haseditbox[field] and "|cff9999ff" or "").. val)
 
 			if haseditbox[field] then
-				local button = CreateFrame("Button", nil, frame)
+				local button = CreateFrame("Button", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
 				button:SetAllPoints(detail)
 				button.val = val
 				button:SetScript("OnClick", lib.OpenEditbox)

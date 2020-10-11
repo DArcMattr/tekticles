@@ -13,13 +13,13 @@ lib.bg = {
 -- Creates a scrollbar
 -- Parent is required, offset is optional
 function lib.new(parent, offset)
-	local f = CreateFrame("Slider", nil, parent)
+	local f = CreateFrame("Slider", nil, parent, BackdropTemplateMixin and "BackdropTemplate")
 	f:SetWidth(16)
 
 	f:SetPoint("TOPRIGHT", 0 - (offset or 0), -16 - (offset or 0))
 	f:SetPoint("BOTTOMRIGHT", 0 - (offset or 0), 16 + (offset or 0))
 
-	local up = CreateFrame("Button", nil, f)
+	local up = CreateFrame("Button", nil, f, BackdropTemplateMixin and "BackdropTemplate")
 	up:SetPoint("BOTTOM", f, "TOP")
 	up:SetWidth(16) up:SetHeight(16)
 	up:SetNormalTexture("Interface\\Buttons\\UI-ScrollBar-ScrollUpButton-Up")
@@ -39,7 +39,7 @@ function lib.new(parent, offset)
 		PlaySound("UChatScrollButton")
 	end)
 
-	local down = CreateFrame("Button", nil, f)
+	local down = CreateFrame("Button", nil, f, BackdropTemplateMixin and "BackdropTemplate")
 	down:SetPoint("TOP", f, "BOTTOM")
 	down:SetWidth(16) down:SetHeight(16)
 	down:SetNormalTexture("Interface\\Buttons\\UI-ScrollBar-ScrollDownButton-Up")
@@ -70,7 +70,7 @@ function lib.new(parent, offset)
 		if value == max then down:Disable() else down:Enable() end
 	end)
 
-	local border = CreateFrame("Frame", nil, f)
+	local border = CreateFrame("Frame", nil, f, BackdropTemplateMixin and "BackdropTemplate")
 	border:SetPoint("TOPLEFT", up, -5, 5)
 	border:SetPoint("BOTTOMRIGHT", down, 5, -3)
 	border:SetBackdrop(lib.bg)
